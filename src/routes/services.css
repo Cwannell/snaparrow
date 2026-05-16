@@ -1,0 +1,105 @@
+.services-page {
+  font-family: system-ui, sans-serif;
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #222;
+}
+/* HEADER */
+.services-page h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+/* INTRO TEXT */
+.services-page p.intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+/* SERVICE GRID */
+.service-grid {
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.service-card {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.055);
+  border: 1px solid #eee;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  color: #007aff;
+}
+.service-card p {
+  opacity: 0.8;
+  line-height: 1.5;
+}
+/* FINAL CTA */
+.services-cta {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+.services-cta a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.9rem 1.8rem;
+  background: #007aff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+.services-cta a:hover {
+  background: #0062cc;
+}
+Updated Services.jsx (optional but recommended)
+If you want your JSX to match the CSS:
+
+jsx
+
+
+import "./services.css";
+export default function Services() {
+  return (
+    <div className="services-page">
+      <h1>Our Services</h1>
+      <p className="intro">
+        SnapArrow delivers high‑quality, modern websites designed to convert and grow your online presence.
+      </p>
+      <div className="service-grid">
+        <div className="service-card">
+          <h3>Landing Page</h3>
+          <p>Clean, fast loading, and designed to capture attention instantly.</p>
+        </div>
+        <div className="service-card">
+          <h3>Business Website</h3>
+          <p>A complete multi‑page site with SEO‑ready content and smart navigation.</p>
+        </div>
+        <div className="service-card">
+          <h3>E‑commerce Setup</h3>
+          <p>Sell online with a polished storefront, product system, and checkout flow.</p>
+        </div>
+        <div className="service-card">
+          <h3>Custom Development</h3>
+          <p>Tailored features, integrations, and optimized user experiences.</p>
+        </div>
+      </div>
+      <div className="services-cta">
+        <a href="/contact">Request a Quote</a>
+      </div>
+    </div>
+  );
+}

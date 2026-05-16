@@ -1,0 +1,31 @@
+.contact-page {
+  max-width: 720px;
+  margin: 3rem auto;
+  /* padding: 2rem 1.5rem; */
+  font-family: system-ui, sans-serif;
+  color: #222;
+}
+.contact-page h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #007aff; /* same blue as navbar + buttons */
+}
+.contact-page p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+.contact-page strong {
+  color: #007aff;
+}
+@media (max-width: 600px) {
+  .contact-page {
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  .contact-page h1 {
+    font-size: 1.9rem;
+  }
+}

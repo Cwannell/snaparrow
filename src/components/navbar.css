@@ -1,0 +1,31 @@
+/* NAVBAR CONTAINER */
+nav {
+  width: auto;
+  border-bottom: 1px solid #094ded;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: system-ui, sans-serif;
+  background: #fff;
+}
+/* NAV LINKS */
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+nav a:hover {
+  color: #007aff;
+}
+/* LOGO LINK (first <Link>) */
+nav a:first-child {
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+/* MOBILE */
+@media (max-width: 600px) {
+  nav {
+    padding: 0.8rem 1rem;
+    gap: 1rem;
+  }
+}

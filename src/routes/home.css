@@ -1,0 +1,167 @@
+body {
+    /* Set your background color */
+    background-color: #fce4ec00; 
+
+    /* Layer two dot patterns (shifted slightly to create the dots) */
+    background-image: 
+        radial-gradient(#4ab1f1 05%, transparent 0%);
+
+    /* Set the size of the polka dot grid */
+    background-size: 20px 20px;
+}
+
+.landing {
+  font-family: system-ui, sans-serif;
+  color: #222;
+  padding-bottom: 3rem;
+}
+/* HERO */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  align-items: center;
+}
+.hero-content {
+  flex: 1 1 400px;
+}
+.hero-content h1 {
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  max-width: 800px;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+}
+.cta-primary,
+.cta-secondary {
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.cta-primary {
+  background: #007aff;
+  color: white;
+}
+.cta-secondary {
+  background: #f3f3f3;
+  color: #333;
+}
+.hero-graphic {
+  flex: 1 1 380px;
+  height: 260px;
+  width: 400px;
+  /* padding-left: 400px; */
+  border-radius: 12px;
+  zoom: 60%;
+}
+
+
+/* FEATURES */
+.features {
+  padding: 3rem 1rem;
+  background: #fafafa;
+}
+.features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Wrapper for both rows */
+.feature-grid {
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;       /* centers the 2-wide row */
+}
+/* Top row: 3 wide */
+.feature-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+/* Bottom row: 2 wide, centered */
+.feature-row-2 {
+  display: grid;
+  margin: 0px 80px;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 2.5rem;
+  justify-content: center;        /* centers the entire row */
+}
+/* Responsive behavior */
+@media (max-width: 780px) {
+  .feature-row-3,
+  .feature-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
+.feature-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+/* TESTIMONIALS */
+.testimonials {
+  overflow: hidden;
+  padding: 3rem 1rem;
+}
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  /* HALF SPEED: 22s → 44s */
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+.testimonial {
+  min-width: 280px;
+  flex-shrink: 0;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.final-cta {
+  max-width: 700px;          /* keeps it nicely centered and readable */
+  margin: 1rem auto;         /* centers horizontally + adds vertical spacing */
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;    /* stack items vertically */
+  align-items: center;       /* center all child elements */
+  justify-content: center;
+  gap: 1.5rem;               /* evenly spaced vertical gap */
+  text-align: center;
+  font-family: system-ui, sans-serif;
+}
+.final-cta h2 {
+  font-size: 2rem;
+  color: #222;
+}
+.final-cta p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  max-width: 550px;
+}
+.final-cta .big {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.15rem;
+  border-radius: 6px;
+}
