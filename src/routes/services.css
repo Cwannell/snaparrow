@@ -65,13 +65,9 @@
 .services-cta a:hover {
   background: #0062cc;
 }
-Updated Services.jsx (optional but recommended)
-If you want your JSX to match the CSS:
-
-jsx
 
 
-import "./services.css";
+/* import "./services.css";
 export default function Services() {
   return (
     <div className="services-page">
@@ -102,4 +98,4 @@ export default function Services() {
       </div>
     </div>
   );
-}
+} */
