@@ -1,22 +1,22 @@
-FROM node:20-alpine AS development-dependencies-env
-COPY . /app
+###########################################
+# 1. FRONTEND BUILD (VITE)
+###########################################
+FROM node:20-alpine AS frontend-build
 WORKDIR /app
+# Install dependencies
+COPY package.json package-lock.json ./
 RUN npm ci
-
-FROM node:20-alpine AS production-dependencies-env
-COPY ./package.json package-lock.json /app/
-WORKDIR /app
-RUN npm ci --omit=dev
-
-FROM node:20-alpine AS build-env
-COPY . /app/
-COPY --from=development-dependencies-env /app/node_modules /app/node_modules
-WORKDIR /app
+# Add source
+COPY . .
+# Build the Vite app
 RUN npm run build
-
-FROM node:20-alpine
-COPY ./package.json package-lock.json /app/
-COPY --from=production-dependencies-env /app/node_modules /app/node_modules
-COPY --from=build-env /app/dist /app/dist
-WORKDIR /app
-CMD ["npm", "run", "start"]
+###########################################
+# 2. SERVE FRONTEND VIA NGINX
+###########################################
+FROM nginx:alpine AS frontend-runtime
+# Copy built frontend to NGINX directory
+COPY --from=frontend-build /app/dist /usr/share/nginx/html
+# Expose web server port
+EXPOSE 80
+# Start NGINX
+CMD ["nginx", "-g", "daemon off;"]
