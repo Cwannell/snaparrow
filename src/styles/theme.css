@@ -1,0 +1,68 @@
+/* Background surfaces */
+.bg-base {
+  background: var(--grey-900);
+}
+
+.bg-surface {
+  background: var(--grey-800);
+}
+
+.bg-card {
+  background: var(--grey-700);
+}
+
+/* Borders */
+.border {
+  border: 1px solid var(--grey-600);
+}
+
+.border-green {
+  border: 1px solid var(--brand-green);
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-medium);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--brand-green);
+  color: var(--black);
+  box-shadow: var(--glow-green);
+}
+
+.btn-primary:hover {
+  background: var(--brand-green-dark);
+  box-shadow: 0 0 18px rgba(50, 255, 126, 1);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--brand-green);
+  color: var(--brand-green);
+}
+
+.btn-outline:hover {
+  background: var(--brand-green);
+  color: var(--black);
+}
+
+/* Cards */
+.card {
+  background: var(--grey-800);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--grey-600);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-medium);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hard);
+}

@@ -1,31 +1,80 @@
-/* NAVBAR CONTAINER */
-nav {
-  width: auto;
-  border-bottom: 1px solid #094ded;
+/* NAVBAR BASE */
+.navbar {
+  background: #0a0a0a;                       /* pure black */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #1f1f1f;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   font-family: system-ui, sans-serif;
-  background: #fff;
 }
-/* NAV LINKS */
-nav a {
+/* LINK BASE */
+.nav-link {
+  position: relative;
+  color: #dcdcdc;
+  z-index: 2; /* <-- ensures text sits above arrow */
   text-decoration: none;
-  color: #333;
+  font-size: 1rem;
   font-weight: 500;
+  padding: 0.25rem 0;
+  display: inline-block;
+  transition: color 0.2s ease;
 }
-nav a:hover {
-  color: #007aff;
-}
-/* LOGO LINK (first <Link>) */
-nav a:first-child {
+/* BRAND LINK (SnapArrow) */
+.nav-link.brand {
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  color: #32ff7e;
+  text-shadow: 0 0 10px rgba(50,255,126,0.8);
 }
-/* MOBILE */
-@media (max-width: 600px) {
-  nav {
-    padding: 0.8rem 1rem;
-    gap: 1rem;
-  }
+css
+
+
+/* LARGE BAR that fills the navbar height */
+.nav-link::before {
+ content: "";
+  position: absolute;
+  left: -100px;
+  top: 0;
+  height: 100%;      
+  width: 80px;
+  background: #32ff7e;
+  box-shadow: 0 0 20px rgba(50,255,126,0.75);
+  opacity: 0;
+  transition:
+    left 0.25s ease,
+    opacity 0.25s ease;
+  z-index: 1; /* <-- arrow ABOVE navbar, BELOW text */
+}                
+
+/* HUGE TRIANGLE matching height of bar */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 32px solid transparent;      
+  border-bottom: 32px solid transparent;   
+  border-left: 40px solid #32ff7e;
+  filter: drop-shadow(0 0 16px rgba(50,255,126,0.7));
+  opacity: 0;
+  transition:
+    left 0.25s ease,
+    opacity 0.25s ease;
+  z-index: 1; /* <-- same layer as bar */
+}
+/* HOVER ANIMATION */
+.nav-link:hover::before {
+  left: -10px;
+  opacity: 1;
+}
+.nav-link:hover::after {
+  left: 70px;
+  opacity: 1;
+}
+.nav-link:hover {
+  color: #32ff7e;
+  text-shadow: 0 0 10px rgba(50,255,126,0.6);
 }

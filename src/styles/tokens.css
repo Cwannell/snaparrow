@@ -1,0 +1,48 @@
+:root {
+  /* Brand Colors */
+  --brand-green: #32ff7e;
+  --brand-green-dark: #25d968;
+  --brand-green-glow: 0 0 14px rgba(50, 255, 126, 0.8);
+
+  /* Base Greyscale */
+  --black: #080808;
+  --grey-900: #111;
+  --grey-800: #1a1a1a;
+  --grey-700: #222;
+  --grey-600: #2a2a2a;
+  --grey-300: #bfbfbf;
+  --grey-100: #e3e3e3;
+
+  /* Text */
+  --text-primary: #e3e3e3;
+  --text-secondary: #bfbfbf;
+  --text-accent: var(--brand-green);
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 999px;
+
+  /* Shadows / Glow */
+  --shadow-soft: 0 2px 4px rgba(0,0,0,0.4);
+  --shadow-hard: 0 8px 24px rgba(0,0,0,0.5);
+  --glow-green: 0 0 12px rgba(50, 255, 126, 0.6);
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Container }
+  --container-width: 1200px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-medium: 0.25s ease;
+}

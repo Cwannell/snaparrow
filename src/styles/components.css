@@ -1,0 +1,114 @@
+nav {
+  background: var(--grey-900);
+  border-bottom: 1px solid var(--grey-700);
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+nav a:hover {
+  color: var(--brand-green);
+  text-shadow: var(--glow-green);
+}
+
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--brand-green);
+}
+.hero {
+  background: var(--grey-800);
+  text-align: center;
+  padding: var(--space-16) var(--space-4);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: var(--space-4);
+  color: var(--brand-green);
+  text-shadow: var(--glow-green);
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto var(--space-6);
+  opacity: 0.85;
+}
+.feature-item {
+  padding: var(--space-6);
+  background: var(--grey-700);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--grey-600);
+  transition: var(--transition-medium);
+}
+
+.feature-item:hover {
+  box-shadow: var(--shadow-hard);
+  transform: translateY(-3px);
+}
+.testimonials {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.testimonials::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--space-6);
+  animation: scroll 44s linear infinite;
+}
+
+.testimonial {
+  min-width: 280px;
+  background: var(--grey-700);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--brand-green);
+  box-shadow: var(--green-glow);
+}
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--grey-800);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--grey-700);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  background: var(--grey-900);
+  border: 1px solid var(--grey-700);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--brand-green);
+  box-shadow: var(--green-glow);
+  outline: none;
+}
+
+.invalid {
+  border-color: #ff4d4d;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+}

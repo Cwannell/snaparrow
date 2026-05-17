@@ -86,7 +86,7 @@ export default function Home() {
 </section>
       {/* FINAL CTA */}
       <section className="final-cta">
-        <h2>Ready to Start?</h2>
+        <h2>Ready to Press Start?</h2>
         <p>Tell us what you want to build and we’ll take it from there.</p>
         <a href="/form" className="cta-primary big">Get in Touch</a>
       </section>

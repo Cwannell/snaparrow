@@ -1,18 +1,13 @@
 body {
-    /* Set your background color */
-    background-color: #fce4ec00; 
-
-    /* Layer two dot patterns (shifted slightly to create the dots) */
-    background-image: 
-        radial-gradient(#4ab1f1 05%, transparent 0%);
-
-    /* Set the size of the polka dot grid */
-    background-size: 20px 20px;
+  background-color: #0a0a0a;  /* deep black */
+  background-image:
+    radial-gradient(#32ff7e 5%, transparent 0%); /* neon green dots */
+  background-size: 20px 20px;
+  color: #dcdcdc;
 }
-
 .landing {
   font-family: system-ui, sans-serif;
-  color: #222;
+  color: #dcdcdc; /* light grey text */
   padding-bottom: 3rem;
 }
 /* HERO */
@@ -23,6 +18,10 @@ body {
   padding: 2rem 1rem;
   align-items: center;
 }
+
+h2{
+  color: #32ff7e; 
+}
 .hero-content {
   flex: 1 1 400px;
 }
@@ -30,11 +29,15 @@ body {
   font-size: 2.6rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+  color: #32ff7e;             /* neon green */
+  text-shadow: 0 0 10px rgba(50,255,126,0.8);
 }
 .hero-content p {
   max-width: 800px;
   margin-bottom: 2rem;
-  opacity: 0.8;
+  opacity: 0.85;
+  color: #fff;
+  font-size: 18px;
 }
 .hero-cta {
   display: flex;
@@ -47,39 +50,49 @@ body {
   text-decoration: none;
   font-weight: 600;
 }
+/* neon green button */
 .cta-primary {
-  background: #007aff;
-  color: white;
+  background: #32ff7e;
+  color: #0a0a0a;
+  box-shadow: 0 0 12px rgba(50,255,126,0.6);
 }
+.cta-primary:hover {
+  background: #25d968;
+  box-shadow: 0 0 18px rgba(50,255,126,1);
+}
+/* secondary grey button */
 .cta-secondary {
-  background: #f3f3f3;
-  color: #333;
+  background: #2a2a2a;
+  color: #eaeaea;
+}
+.cta-secondary:hover {
+  background: #3a3a3a;
 }
 .hero-graphic {
   flex: 1 1 380px;
   height: 260px;
   width: 400px;
-  /* padding-left: 400px; */
   border-radius: 12px;
   zoom: 60%;
+  box-shadow: 0 0 12px rgba(50,255,126,0.4);
 }
-
-
 /* FEATURES */
 .features {
   padding: 3rem 1rem;
-  background: #fafafa;
+  background: transparent;
+}
 }
 .features h2 {
   text-align: center;
   margin-bottom: 2rem;
+  color: #32ff7e;
+  text-shadow: 0 0 10px rgba(50,255,126,0.6);
 }
-
 /* Wrapper for both rows */
 .feature-grid {
   display: grid;
   gap: 1.5rem;
-  justify-content: center;       /* centers the 2-wide row */
+  justify-content: center;
 }
 /* Top row: 3 wide */
 .feature-row-3 {
@@ -93,9 +106,9 @@ body {
   margin: 0px 80px;
   grid-template-columns: repeat(2, minmax(240px, 1fr));
   gap: 2.5rem;
-  justify-content: center;        /* centers the entire row */
+  justify-content: center;
 }
-/* Responsive behavior */
+/* Responsive */
 @media (max-width: 780px) {
   .feature-row-3,
   .feature-row-2 {
@@ -103,65 +116,88 @@ body {
   }
 }
 .feature-item {
-  background: white;
+ background: rgba(10,10,10,0.35); /* slight translucent panel */
+  backdrop-filter: blur(6px);      /* optional, looks premium */
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border: 1px solid #2a2a2a;
+  color: #dcdcdc;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.feature-item:hover {
+  border-color: #32ff7e;
+  box-shadow: 0 0 14px rgba(50,255,126,0.5);
 }
 /* TESTIMONIALS */
 .testimonials {
   overflow: hidden;
   padding: 3rem 1rem;
+  background: transparent;
 }
 .carousel-track {
   display: flex;
   gap: 1.5rem;
   width: max-content;
-  /* HALF SPEED: 22s → 44s */
   animation: scroll 30s linear infinite;
   will-change: transform;
 }
 .testimonial {
   min-width: 280px;
   flex-shrink: 0;
-  background: white;
+  background: rgba(10,10,10,0.35);
+  backdrop-filter: blur(6px);
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  color: #dcdcdc;
+  border: 1px solid #2f2f2f;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+.testimonial:hover {
+  border-color: #32ff7e;
+  box-shadow: 0 0 14px rgba(50,255,126,0.6);
 }
 @keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-
+/* FINAL CTA */
 .final-cta {
-  max-width: 700px;          /* keeps it nicely centered and readable */
-  margin: 1rem auto;         /* centers horizontally + adds vertical spacing */
-  padding: 3rem 1.5rem;
+  max-width: 700px;
+  margin: 1rem auto;
+  padding: 2rem 1.5rem;
   display: flex;
-  flex-direction: column;    /* stack items vertically */
-  align-items: center;       /* center all child elements */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 1.5rem;               /* evenly spaced vertical gap */
+  gap: 1.5rem;
   text-align: center;
   font-family: system-ui, sans-serif;
+ background: rgba(10,10,10,0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  border: 1px solid #1f1f1f;
 }
 .final-cta h2 {
   font-size: 2rem;
-  color: #222;
+  color: #32ff7e;
+  text-shadow: 0 0 10px rgba(50,255,126,0.6);
 }
 .final-cta p {
   font-size: 1.1rem;
-  opacity: 0.8;
+  opacity: 0.85;
   max-width: 550px;
+  color: #cfcfcf;
 }
 .final-cta .big {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   padding: 1rem 2rem;
   font-size: 1.15rem;
   border-radius: 6px;
+  background: #32ff7e;
+  color: #0a0a0a;
+  box-shadow: 0 0 12px rgba(50,255,126,0.6);
+}
+.final-cta .big:hover {
+  background: #25d968;
+  box-shadow: 0 0 18px rgba(50,255,126,1);
 }

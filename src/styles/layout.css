@@ -1,0 +1,38 @@
+/* Centered max-width wrapper */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* Section spacing */
+.section {
+  padding: var(--space-16) 0;
+}
+
+.section-sm {
+  padding: var(--space-12) 0;
+}
+
+.section-xs {
+  padding: var(--space-8) 0;
+}
+
+/* Grid helpers */
+.grid-2 {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-center {
+  display: grid;
+  justify-content: center;
+  gap: var(--space-6);
+}
