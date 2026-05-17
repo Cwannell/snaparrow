@@ -28,7 +28,7 @@ export default function Services() {
        
       </div>
       <div className="services-cta">
-        <a href="/contact">Get in Touch</a>
+        <a href="/form">Get in Touch</a>
       </div>
     </div>
   );
