@@ -11,14 +11,16 @@
 
 /* 2. LINK BASE (KEEP YOUR EXISTING STYLES HERE) */
 .nav-link {
-  position: relative; /* ← KEPT: Makes nav-link the reference for slider WIDTH */
+  position: relative;
+  display: flex; /* ← CHANGED from inline-block to flex (centers text) */
+  align-items: center; /* ← ADDED - centers text vertically */
+  height: 100%; /* ← ADDED - makes nav-link FILL navbar height (KEY FIX!) */
   color: #dcdcdc;
-  z-index: 2; /* ← Text stays ABOVE slider */
+  z-index: 2;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  padding: 0.25rem 0;  
-  display: inline-block;
+  padding: 0.25rem 0; /* ← KEEP YOUR ORIGINAL PADDING */
   transition: color 0.2s ease;
 }
 
@@ -48,6 +50,7 @@
     opacity 0.25s ease;
      backface-visibility: hidden; /* Prevents rendering glitches */
   z-index: 1; /* ← Slider BELOW text (z-index:2) but ABOVE navbar bg */
+    outline: 2px solid lime !important; /* Bright green outline = easy to see */
 }
 
 /* 5. HOVER TRIGGER (THIS MAKES IT APPEAR) */

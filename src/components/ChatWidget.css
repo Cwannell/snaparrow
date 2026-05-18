@@ -1,0 +1,102 @@
+.chat-widget-wrapper {
+  position: fixed;          /* stays in the viewport */
+  bottom: 20px;             /* distance from bottom */
+  right: 20px;              /* distance from right */
+  z-index: 1500;            /* make sure it sits above most content */
+}
+
+/* ---------- Floating toggle button ---------- */
+.chat-toggle {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  background: #0066ff;      /* brand blue – change to match your site */
+  border: none;
+  border-radius: 50%;      /* circle */
+  color: #fff;
+  font-size: 24px;         /* emoji size */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background .2s;
+}
+.chat-toggle:hover {
+  background: #0052cc;      /* slightly darker on hover */
+}
+
+/* ---------- Chat pane ---------- */
+.chat-pane {
+  position: fixed;
+  bottom: 90px;             /* sits just above the button (56px + some gap) */
+  right: 20px;
+  width: 340px;             /* feel free to make it wider/narrower */
+  max-height: 500px;        /* prevents it from taking over the screen */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;   /* stacks header → log → input */
+  opacity: 0;               /* start hidden */
+  pointer-events: none;     /* prevent clicks while hidden */
+  transition: opacity .2s ease;
+  z-index: 1500;
+}
+.chat-pane.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ---------- Header ---------- */
+.chat-header {
+  background: #0066ff;
+  color: #fff;
+  padding: 10px;
+  font-weight: 600;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* ---------- Message log ---------- */
+.chat-log {
+  flex: 1;                  /* take remaining vertical space */
+  overflow-y: auto;         /* scroll when content exceeds height */
+  padding: 10px;
+}
+
+/* ---------- Message bubbles ---------- */
+.msg {
+  margin: 6px 0;
+  max-width: 80%;           /* prevents bubbles from stretching full width */
+  word-break: break-word;   /* break long words / URLs */
+}
+.user {
+  align-self: flex-end;     /* push to right */
+  background: #e6f7ff;      /* light blue */
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+.bot {
+  align-self: flex-start;   /* push to left */
+  background: #f0f0f0;      /* light gray */
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+/* ---------- Input area ---------- */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #eee;
+  padding: 5px;
+}
+.chat-input input {
+  flex: 1;                  /* take all available width */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.chat-input button {
+  margin-left: 6px;         /* space between input and button */
+  padding: 0 12px;          /* comfortable hit‑area */
+}
