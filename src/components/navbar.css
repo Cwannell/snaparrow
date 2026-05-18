@@ -1,28 +1,28 @@
-/* NAVBAR BASE */
 .navbar {
-  background: #0a0a0a;                       /* pure black */
+  background: #0a0a0a;
   padding: 1rem 2rem;
   border-bottom: 1px solid #1f1f1f;
   display: flex;
-  align-items: center;
+  align-items: center; /* KEEP THIS - preserves your vertical centering */
   gap: 2rem;
   font-family: system-ui, sans-serif;
+  position: relative; /* ← ADDED: Makes navbar the reference for slider HEIGHT */
 }
 
-/* LINK BASE */
+/* 2. LINK BASE (KEEP YOUR EXISTING STYLES HERE) */
 .nav-link {
-  position: relative;
+  position: relative; /* ← KEPT: Makes nav-link the reference for slider WIDTH */
   color: #dcdcdc;
-  z-index: 2; /* <-- ensures text sits above arrow */
+  z-index: 2; /* ← Text stays ABOVE slider */
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  padding: 0.25rem 0;
+  padding: 0.25rem 0;  
   display: inline-block;
   transition: color 0.2s ease;
 }
 
-/* BRAND LINK (SnapArrow) */
+/* 3. BRAND LINK (KEEP AS IS) */
 .nav-link.brand {
   font-weight: 700;
   font-size: 1.2rem;
@@ -30,25 +30,28 @@
   text-shadow: 0 0 10px rgba(50,255,126,0.8);
 }
 
-/* LARGE BAR that fills the navbar height */
+/* 4. THE SLIDER (THIS IS WHAT WAS MISSING/BROKEN) */
 .nav-link::before {
   content: "";
   position: absolute;
-  left: -100px; /* start off-screen to the left */
-  top: 0;
-  height: 100%;
-  width: 100%;
+  /* VERTICAL: Stretch to navbar height (using navbar as reference) */
+  top: 0;          /* ← Start at navbar's top edge */
+  bottom: 0;       /* ← End at navbar's bottom edge (fills height) */
+  /* HORIZONTAL: Relative to nav-link width (using nav-link as reference) */
+  left: -100%;     /* ← Start FULLY off-screen left */
+  width: 100%;     /* ← Match nav-link width when active */
   background: #32ff7e;
   box-shadow: 0 0 20px rgba(50,255,126,0.75);
   opacity: 0;
   transition:
     left 0.25s ease,
     opacity 0.25s ease;
-  z-index: 1; /* <-- arrow ABOVE navbar, BELOW text */
+     backface-visibility: hidden; /* Prevents rendering glitches */
+  z-index: 1; /* ← Slider BELOW text (z-index:2) but ABOVE navbar bg */
 }
 
-/* HOVER ANIMATION */
+/* 5. HOVER TRIGGER (THIS MAKES IT APPEAR) */
 .nav-link:hover::before {
-  left: -10px;
+  left: 0; /* ← Slides to cover 100% of nav-link width */
   opacity: 1;
 }
