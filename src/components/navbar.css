@@ -8,6 +8,7 @@
   gap: 2rem;
   font-family: system-ui, sans-serif;
 }
+
 /* LINK BASE */
 .nav-link {
   position: relative;
@@ -20,6 +21,7 @@
   display: inline-block;
   transition: color 0.2s ease;
 }
+
 /* BRAND LINK (SnapArrow) */
 .nav-link.brand {
   font-weight: 700;
@@ -27,17 +29,15 @@
   color: #32ff7e;
   text-shadow: 0 0 10px rgba(50,255,126,0.8);
 }
-css
-
 
 /* LARGE BAR that fills the navbar height */
 .nav-link::before {
- content: "";
+  content: "";
   position: absolute;
-  left: -100px;
+  left: -100px; /* start off-screen to the left */
   top: 0;
-  height: 100%;      
-  width: 80px;
+  height: 100%;
+  width: 100%;
   background: #32ff7e;
   box-shadow: 0 0 20px rgba(50,255,126,0.75);
   opacity: 0;
@@ -45,36 +45,10 @@ css
     left 0.25s ease,
     opacity 0.25s ease;
   z-index: 1; /* <-- arrow ABOVE navbar, BELOW text */
-}                
-
-/* HUGE TRIANGLE matching height of bar */
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: -22px;
-  top: 0;
-  width: 0;
-  height: 0;
-  border-top: 32px solid transparent;      
-  border-bottom: 32px solid transparent;   
-  border-left: 40px solid #32ff7e;
-  filter: drop-shadow(0 0 16px rgba(50,255,126,0.7));
-  opacity: 0;
-  transition:
-    left 0.25s ease,
-    opacity 0.25s ease;
-  z-index: 1; /* <-- same layer as bar */
 }
+
 /* HOVER ANIMATION */
 .nav-link:hover::before {
   left: -10px;
   opacity: 1;
-}
-.nav-link:hover::after {
-  left: 70px;
-  opacity: 1;
-}
-.nav-link:hover {
-  color: #32ff7e;
-  text-shadow: 0 0 10px rgba(50,255,126,0.6);
 }
