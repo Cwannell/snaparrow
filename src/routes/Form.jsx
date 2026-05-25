@@ -36,10 +36,11 @@ export default function Contact() {
   return (
     <div className="contact-page">
       {/* CONTACT HEADER SECTION */}
-      <h1 className="title-form">Contact</h1>
+      {/* <h1>Contact</h1> */}
       {/* CONTACT FORM SECTION */}
+      
       <form className="contact-form" onSubmit={handleSubmit}>
-        <h2>Send a Message</h2>
+      <h1>Send a Message</h1>
         <div className="form-group">
           <label>Name</label>
           <input

@@ -1,102 +1,191 @@
+/* Wrapper keeps widget in bottom-right corner */
 .chat-widget-wrapper {
-  position: fixed;          /* stays in the viewport */
-  bottom: 20px;             /* distance from bottom */
-  right: 20px;              /* distance from right */
-  z-index: 1500;            /* make sure it sits above most content */
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 999;
+  font-family: system-ui, sans-serif;
 }
 
-/* ---------- Floating toggle button ---------- */
+/* Floating toggle button */
 .chat-toggle {
-  position: relative;
   width: 56px;
   height: 56px;
-  background: #0066ff;      /* brand blue – change to match your site */
+  border-radius: 50%;
   border: none;
-  border-radius: 50%;      /* circle */
-  color: #fff;
-  font-size: 24px;         /* emoji size */
   cursor: pointer;
+  background: #32ff7e;
+  color: #0a0a0a;
+  font-size: 1.6rem;
+  box-shadow: 0 0 16px rgba(50, 255, 126, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: background .2s;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+    background-image: url(../components/img/sa.png);
 }
+  .chat-toggle img{
+    height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(50,255,126,0.7);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+  }
+
 .chat-toggle:hover {
-  background: #0052cc;      /* slightly darker on hover */
+  transform: translateY(-1px) scale(1.05);
+  background: #25d968;
+  box-shadow: 0 0 22px rgba(50, 255, 126, 1);
+  background-image: url(../components/img/sa.png);
 }
 
-/* ---------- Chat pane ---------- */
+/* Chat panel */
 .chat-pane {
-  position: fixed;
-  bottom: 90px;             /* sits just above the button (56px + some gap) */
-  right: 20px;
-  width: 340px;             /* feel free to make it wider/narrower */
-  max-height: 500px;        /* prevents it from taking over the screen */
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  position: absolute;
+  right: 0;
+  bottom: 70px; /* sits above toggle button */
+  width: 320px;
+  max-height: 420px;
+
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.6);
+
   display: flex;
-  flex-direction: column;   /* stacks header → log → input */
-  opacity: 0;               /* start hidden */
-  pointer-events: none;     /* prevent clicks while hidden */
-  transition: opacity .2s ease;
-  z-index: 1500;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateY(16px);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
+
+/* Open state */
 .chat-pane.open {
   opacity: 1;
-  pointer-events: all;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-/* ---------- Header ---------- */
+/* Header */
 .chat-header {
-  background: #0066ff;
-  color: #fff;
-  padding: 10px;
+  padding: 0.75rem 1rem;
+  background: #111;
+  border-bottom: 1px solid #2a2a2a;
+  color: #32ff7e;
   font-weight: 600;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  font-size: 0.95rem;
+  text-shadow: 0 0 8px rgba(50, 255, 126, 0.7);
 }
 
-/* ---------- Message log ---------- */
+/* Message log */
 .chat-log {
-  flex: 1;                  /* take remaining vertical space */
-  overflow-y: auto;         /* scroll when content exceeds height */
-  padding: 10px;
+  flex: 1;
+  padding: 0.75rem 0.75rem 0.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
 }
 
-/* ---------- Message bubbles ---------- */
+/* Messages */
 .msg {
-  margin: 6px 0;
-  max-width: 80%;           /* prevents bubbles from stretching full width */
-  word-break: break-word;   /* break long words / URLs */
-}
-.user {
-  align-self: flex-end;     /* push to right */
-  background: #e6f7ff;      /* light blue */
-  padding: 8px 12px;
-  border-radius: 12px;
-}
-.bot {
-  align-self: flex-start;   /* push to left */
-  background: #f0f0f0;      /* light gray */
-  padding: 8px 12px;
-  border-radius: 12px;
+  max-width: 80%;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  line-height: 1.4;
 }
 
-/* ---------- Input area ---------- */
+/* User messages (right) */
+.msg.user {
+  align-self: flex-end;
+  background: #32ff7e;
+  color: #0a0a0a;
+  border-bottom-right-radius: 2px;
+}
+
+/* Bot messages (left) */
+.msg.bot {
+  align-self: flex-start;
+  background: rgba(20, 20, 20, 0.95);
+  color: #e4e4e4;
+  border: 1px solid #2a2a2a;
+  border-bottom-left-radius: 2px;
+}
+
+/* Input area */
 .chat-input {
   display: flex;
-  border-top: 1px solid #eee;
-  padding: 5px;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 0.6rem 0.7rem;
+  border-top: 1px solid #2a2a2a;
+  background: #050505;
 }
+
 .chat-input input {
-  flex: 1;                  /* take all available width */
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  flex: 1;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
+
+.chat-input input::placeholder {
+  color: #777;
+}
+
+.chat-input input:focus {
+  outline: none;
+  border-color: #32ff7e;
+  box-shadow: 0 0 8px rgba(50, 255, 126, 0.6);
+}
+
+/* Send button */
 .chat-input button {
-  margin-left: 6px;         /* space between input and button */
-  padding: 0 12px;          /* comfortable hit‑area */
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #32ff7e;
+  color: #0a0a0a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(50, 255, 126, 0.6);
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.chat-input button:hover {
+  background: #25d968;
+  box-shadow: 0 0 14px rgba(50, 255, 126, 0.9);
+  transform: translateY(-1px);
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .chat-pane {
+    width: 90vw;
+    right: 0.5rem;
+  }
 }

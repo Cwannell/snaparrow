@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client"; // We'll install this next
 import "./ChatWidget.css"; // This is the CSS you already have!
-
+import logo from "./img/sa.png";
 export default function ChatWidget() {
   // --- STATE ---
   const [messages, setMessages] = useState([]);
@@ -57,8 +57,7 @@ export default function ChatWidget() {
         className="chat-toggle"
         onClick={toggleChat}
         aria-label={isOpen ? "Close chat" : "Open chat"}
-      >
-        💬
+      >  <img src={logo} alt="SnapArrow logo" />
       </button>
 
       {/* Chat Panel */}
