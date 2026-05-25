@@ -22,6 +22,7 @@ export default function Home() {
   style={{ backgroundImage: `url(${heroImage})`, height:"600px", }}
 ></div>
       </section>
+      <section className="banner"></section>
       {/* FEATURES */}
       <section className="features">
         <h2>Why Choose SnapArrow?</h2>
