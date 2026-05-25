@@ -81,7 +81,7 @@ h2{
   padding: 3rem 1rem;
   background: transparent;
 }
-}
+
 .features h2 {
   text-align: center;
   margin-bottom: 2rem;
@@ -123,10 +123,37 @@ h2{
   border: 1px solid #2a2a2a;
   color: #dcdcdc;
   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  overflow: hidden;
 }
 .feature-item:hover {
   border-color: #32ff7e;
   box-shadow: 0 0 14px rgba(50,255,126,0.5);
+  content: "Click to learn more";  /* <-- your string here */
+  color: #32ff7e;
+  text-shadow: 0 0 6px rgba(50,255,126,0.6);
+  position: relative;
+}
+
+.feature-item:hover::after {
+  content: "Click to learn more";  /* <-- your string here */
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1rem;                    /* adjust position as you like */
+  font-size: 0.85rem;
+  color: #32ff7e;
+  text-shadow: 0 0 6px rgba(50,255,126,0.6);
+}
+.feature-item:hover::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -105px;
+  width: 0;
+  height: 0;
+  /* triangle pointing LEFT */
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-right: 100px solid #32ff7e;  /* color on the right side */
 }
 /* TESTIMONIALS */
 .testimonials {

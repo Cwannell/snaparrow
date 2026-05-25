@@ -5,6 +5,7 @@ import Home from "./routes/Home.jsx";
 import Services from "./routes/Services.jsx";
 import Contact from "./routes/Contact.jsx";
 import Form from "./routes/Form.jsx";
+import About from "./routes/About.jsx";
 // import './styles/tokens.css';
 // import './styles/theme.css';
 // import './styles/layout.css';
@@ -19,7 +20,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/Form" element={<Form />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          
         </Routes>
       </main>
       <Footer />

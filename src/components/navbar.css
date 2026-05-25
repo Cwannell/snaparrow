@@ -37,7 +37,7 @@
   content: "";
   position: absolute;
   /* VERTICAL: Stretch to navbar height (using navbar as reference) */
-  top: 0;          /* ← Start at navbar's top edge */
+  top: 050px;          /* ← Start at navbar's top edge */
   bottom: 0;       /* ← End at navbar's bottom edge (fills height) */
   /* HORIZONTAL: Relative to nav-link width (using nav-link as reference) */
   left: -100%;     /* ← Start FULLY off-screen left */
@@ -57,4 +57,33 @@
 .nav-link:hover::before {
   left: 0; /* ← Slides to cover 100% of nav-link width */
   opacity: 1;
+}
+
+/* Right-side logo container */
+.nav-logo {
+  margin-left: auto;              /* push logo to the far right */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 3;                     /* above slider but below any overlays */
+}
+/* Logo image */
+.nav-logo img {
+  height: 32px;                   /* adjust as needed */
+  width: auto;
+  border-radius: 6px;
+  background: #0a0a0a;
+  box-shadow: 0 0 10px rgba(50,255,126,0.7);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+/* Hover state: subtle neon pulse */
+.nav-logo:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(50,255,126,1);
+  filter: brightness(1.1);
 }
