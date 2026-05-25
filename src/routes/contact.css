@@ -1,31 +1,53 @@
 .contact-page {
   max-width: 720px;
   margin: 3rem auto;
-  /* padding: 2rem 1.5rem; */
   font-family: system-ui, sans-serif;
-  color: #222;
+  color: #dcdcdc;
+  background: rgba(10, 10, 10, 0.35);
+  backdrop-filter: blur(6px);
+  padding: 2.5rem 1.75rem;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
+/* Heading */
 .contact-page h1 {
-  font-size: 4rem;
+  font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
-  color: #007aff; /* same blue as navbar + buttons */
+  color: #32ff7e;
+  text-shadow: 0 0 10px rgba(50, 255, 126, 0.8);
 }
+/* Paragraphs */
 .contact-page p {
   font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 1rem;
   opacity: 0.9;
 }
+/* Highlighted email text */
 .contact-page strong {
-  color: #007aff;
+  color: #32ff7e;
+  text-shadow: 0 0 6px rgba(50, 255, 126, 0.7);
 }
+/* Optional link styling inside contact text */
+.contact-page a {
+  color: #32ff7e;
+  text-decoration: none;
+}
+.contact-page a:hover {
+  text-decoration: underline;
+}
+/* Responsive */
 @media (max-width: 600px) {
   .contact-page {
-    margin: 2rem auto;
-    padding: 1rem;
+    margin: 2rem 1rem;
+    padding: 1.75rem 1.25rem;
   }
   .contact-page h1 {
-    font-size: 1.9rem;
+    font-size: 2rem;
+  }
+  .contact-page p {
+    font-size: 0.98rem;
   }
 }

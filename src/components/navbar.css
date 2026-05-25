@@ -30,6 +30,8 @@
   font-size: 1.2rem;
   color: #32ff7e;
   text-shadow: 0 0 10px rgba(50,255,126,0.8);
+  margin-left: auto;  /* push it away from the previous links */
+  order: 99;          /* ensure it appears at the far right */
 }
 
 /* 4. THE SLIDER (THIS IS WHAT WAS MISSING/BROKEN) */
@@ -61,17 +63,16 @@
 
 /* Right-side logo container */
 .nav-logo {
-  margin-left: auto;              /* push logo to the far right */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ position: relative;
+  display: flex; /* ← CHANGED from inline-block to flex (centers text) */
+  align-items: center; /* ← ADDED - centers text vertically */
+  z-index: 2;
   text-decoration: none;
-  position: relative;
-  z-index: 3;                     /* above slider but below any overlays */
-}
+}                    /* above slider but below any overlays */
+
 /* Logo image */
 .nav-logo img {
-  height: 32px;                   /* adjust as needed */
+  height: 35px;                   
   width: auto;
   border-radius: 6px;
   background: #0a0a0a;
@@ -83,7 +84,7 @@
 }
 /* Hover state: subtle neon pulse */
 .nav-logo:hover img {
-  transform: scale(1.05);
+  transform: scale(1.15);
   box-shadow: 0 0 18px rgba(50,255,126,1);
   filter: brightness(1.1);
 }

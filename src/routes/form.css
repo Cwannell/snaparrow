@@ -1,70 +1,105 @@
 .contact-form {
   max-width: 600px;
   margin: 3rem auto;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 1.75rem;
   border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  background: rgba(10, 10, 10, 0.35);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
   font-family: system-ui, sans-serif;
+  color: #dcdcdc;
 }
+
+/* Title */
 .contact-form h2 {
   margin-bottom: 1.5rem;
-  color: #007aff;
+  color: #32ff7e;
   font-size: 1.8rem;
+  text-shadow: 0 0 10px rgba(50, 255, 126, 0.8);
 }
+
+/* Groups */
 .form-group {
   margin-bottom: 1.2rem;
 }
+
 .form-group label {
   font-weight: 600;
-  color: #222;
+  color: #dcdcdc;
   margin-bottom: 0.4rem;
   display: block;
 }
+
+/* Inputs & textarea */
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid #2a2a2a;
   border-radius: 6px;
   font-size: 1rem;
-  transition: border-color 0.2s ease;
   font-family: inherit;
+  background: #050505;
+  color: #f0f0f0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #777;
+}
+
+/* Focus state */
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #007aff;
+  border-color: #32ff7e;
+  box-shadow: 0 0 8px rgba(50, 255, 126, 0.6);
   outline: none;
 }
+
+/* Validation */
 .invalid {
   border-color: #ff4d4d !important;
 }
+
 .error {
   color: #ff4d4d;
   font-size: 0.9rem;
   margin-top: 0.35rem;
 }
+
 /* Submit button */
 .btn-primary {
   width: 100%;
-  background: #007aff;
-  color: white;
+  background: #32ff7e;
+  color: #0a0a0a;
   padding: 0.9rem;
   border: none;
   border-radius: 6px;
   font-weight: 600;
   font-size: 1.05rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  box-shadow: 0 0 12px rgba(50, 255, 126, 0.6);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
+
 .btn-primary:hover {
-  background: #0062d6;
+  background: #25d968;
+  box-shadow: 0 0 18px rgba(50, 255, 126, 1);
+  transform: translateY(-1px);
 }
 
-.alt-email{
-    justify-self: center;
+/* Optional helper text / alternate email area */
+.alt-email {
+  justify-self: center;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
-.title-form{
-color: #000;
+/* Form title variations */
+.title-form {
+  color: #32ff7e;
+  text-shadow: 0 0 10px rgba(50, 255, 126, 0.8);
 }
