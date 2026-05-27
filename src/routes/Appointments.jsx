@@ -134,7 +134,7 @@ function validateForm() {
           <div className="summary">
   <h4>Selected appointment</h4>
   <p className="summary-text">
-    {selectedTime ? confirmText : "Choose a date and time."}
+    {selectedTime ? confirmText : "...."}
   </p>
 
   {/* Contact details */}
@@ -146,33 +146,19 @@ function validateForm() {
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        placeholder="Jane Smith"
+        placeholder="Your Name"
         className={errors.name ? "invalid" : ""}
       />
       {errors.name && <div className="err">{errors.name}</div>}
     </div>
 
     <div className="row">
-      <label htmlFor="phone">Phone</label>
-      <input
-        id="phone"
-        type="tel"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-        placeholder="+44 20 7946 0958"
-        className={errors.phone ? "invalid" : ""}
-      />
-      {errors.phone && <div className="err">{errors.phone}</div>}
-    </div>
-
-    <div className="row">
-      <label htmlFor="email">Email</label>
       <input
         id="email"
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="jane@example.com"
+        placeholder="Email"
         className={errors.email ? "invalid" : ""}
       />
       {errors.email && <div className="err">{errors.email}</div>}
@@ -186,7 +172,7 @@ function validateForm() {
       if (!selectedTime) return;
       if (!validateForm()) return;
       alert(
-        `Booked:\n${confirmText}\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}`
+        `Booked:\n${confirmText}\n\nName: ${name}\nEmail: ${email}`
       );
       // TODO: submit to backend here
     }}
@@ -195,20 +181,6 @@ function validateForm() {
   </button>
 </div>
 
-
-          <div className="summary">
-            <h4>Selected appointment</h4>
-            <p className="summary-text">
-              {selectedTime ? confirmText : "Choose a date and time."}
-            </p>
-            {/* <button
-              className="confirm-btn"
-              disabled={!selectedTime}
-              onClick={() => alert(`Booked: ${confirmText}`)}
-            >
-              Confirm booking
-            </button> */}
-          </div>
         </div>
       </div>
     </div>
