@@ -10,6 +10,7 @@ export default function NavBar() {
       <Link to="/about" className="nav-link" aria-label="Go to about page">About</Link>
       <Link to="/services" className="nav-link" aria-label="Go to services page">Services</Link>
       <Link to="/form" className="nav-link" aria-label="Go to contact page">Contact</Link>
+      <Link to="/appointments" className="nav-link" aria-label="Go to appointments page">Appointments</Link>
       <Link to="/" className="nav-link brand" aria-label="Go to homepage">SnapArrow</Link>
     </nav>
   );

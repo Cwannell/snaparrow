@@ -6,11 +6,8 @@ import Services from "./routes/Services.jsx";
 import Contact from "./routes/Contact.jsx";
 import Form from "./routes/Form.jsx";
 import About from "./routes/About.jsx";
-// import './styles/tokens.css';
-// import './styles/theme.css';
-// import './styles/layout.css';
-// import './styles/components.css';
-// import './styles/utilities.css';
+import Appointments from "./routes/Appointments.jsx";
+
 export default function App() {
   return (
     <>
@@ -21,6 +18,8 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/Form" element={<Form />} />
           <Route path="/about" element={<About />} />
+          <Route path="/appointments" element={<Appointments />} />
+
           
         </Routes>
       </main>
