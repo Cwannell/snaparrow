@@ -5,8 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "start": "vite preview --port 8080",
-    "preview": "vite preview"
-    "homepage": "https://cwannell.github.io"
+    "preview": "vite preview",
+    // "homepage": "https://cwannell.github.io"
     
   },
   "dependencies": {
