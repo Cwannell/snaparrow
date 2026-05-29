@@ -6,6 +6,8 @@
     "build": "vite build",
     "start": "vite preview --port 8080",
     "preview": "vite preview"
+    "homepage": "https://cwannell.github.io"
+    
   },
   "dependencies": {
     "react": "^18.3.0",
